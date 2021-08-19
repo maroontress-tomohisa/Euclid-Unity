@@ -1,0 +1,21 @@
+{
+  "name": "com.maroontress.euclid",
+  "version": "1.0.0",
+  "displayName": "Euclid",
+  "description": "Euclid is a .NET library for calculating position and rotation in three-dimensional Euclidean spaces with single precision. It depends on .NET Standard 2.0.",
+  "unity": "2021.2",
+  "unityRelease": "0b3",
+  "documentationUrl": "https://maroontress.github.io/Euclid",
+  "changelogUrl": "https://maroontress.github.io/Euclid/releasenotes.html",
+  "licensesUrl": "https://github.com/maroontress/Euclid/blob/main/COPYRIGHT.md",
+  "dependencies": {
+  },
+  "keywords": [
+    "Math"
+  ],
+  "author": {
+    "name": "Maroontress",
+    "email": "support@maroontress.com",
+    "url": "https://maroontress.github.io"
+  }
+}

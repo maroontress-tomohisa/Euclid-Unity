@@ -1,0 +1,1002 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Maroontress.Euclid</name>
+    </assembly>
+    <members>
+        <member name="T:Maroontress.Euclid.CoordinateSystem">
+            <summary>
+            Represents the nested coordinate system.
+            </summary>
+        </member>
+        <member name="M:Maroontress.Euclid.CoordinateSystem.#ctor(Maroontress.Euclid.Posture,Maroontress.Euclid.CoordinateSystem)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Maroontress.Euclid.CoordinateSystem"/>
+            class.
+            </summary>
+            <param name="posture">
+            The posture against the parent coordinate system.
+            </param>
+            <param name="parent">
+            The parent coordinate system.
+            </param>
+        </member>
+        <member name="M:Maroontress.Euclid.CoordinateSystem.#ctor(Maroontress.Euclid.Posture)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Maroontress.Euclid.CoordinateSystem"/>
+            class, which parent is <see cref="P:Maroontress.Euclid.CoordinateSystem.World"/> coordinate system.
+            </summary>
+            <param name="posture">
+            The posture against the parent coordinate system.
+            </param>
+        </member>
+        <member name="P:Maroontress.Euclid.CoordinateSystem.World">
+            <summary>
+            Gets the world coordinate system.
+            </summary>
+        </member>
+        <member name="P:Maroontress.Euclid.CoordinateSystem.Parent">
+            <summary>
+            Gets the parent coordinate system.
+            </summary>
+        </member>
+        <member name="P:Maroontress.Euclid.CoordinateSystem.Posture">
+            <summary>
+            Gets the posture against the parent coordinate system.
+            </summary>
+        </member>
+        <member name="M:Maroontress.Euclid.CoordinateSystem.TranslateIntoWorld(Maroontress.Euclid.Position)">
+            <summary>
+            Translates the local position in <c>this</c> coordinate system into
+            the world position in the world coordinate system.
+            </summary>
+            <param name="localPosition">
+            The local position.
+            </param>
+            <returns>
+            The world position in the world coordinate system.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.CoordinateSystem.TranslateIntoLocal(Maroontress.Euclid.Position)">
+            <summary>
+            Translates the world position in the world coordinate system into
+            the local position in <c>this</c> coordinate system.
+            </summary>
+            <param name="worldPosition">
+            The world position.
+            </param>
+            <returns>
+            The local position in <c>this</c> coordinate system.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.CoordinateSystem.NewChild(Maroontress.Euclid.Posture)">
+            <summary>
+            Gets new coordinate system whose parent is this one.
+            </summary>
+            <param name="posture">
+            The posture against <c>this</c> coordinate system.
+            </param>
+            <returns>
+            The new coordinate system.
+            </returns>
+        </member>
+        <member name="T:Maroontress.Euclid.Jacobi">
+            <summary>
+            Provides Jacobi eigenvalue algorithm for 3x3 square matrices.
+            </summary>
+        </member>
+        <member name="M:Maroontress.Euclid.Jacobi.EigenvaluesAndVectors(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Gets the eigenvalues and eigenvectors of the specified symmetric
+            matrix by the Jacobi eigenvalue algorithm.
+            </summary>
+            <param name="threshold">
+            All absolute values of off-diagonal entries in D are less than this
+            threshold.
+            </param>
+            <param name="a11">
+            The component (1, 1) of the symmetric matrix.
+            </param>
+            <param name="a12">
+            The component (1, 2) of the symmetric matrix.
+            </param>
+            <param name="a13">
+            The component (1, 3) of the symmetric matrix.
+            </param>
+            <param name="a22">
+            The component (2, 2) of the symmetric matrix.
+            </param>
+            <param name="a23">
+            The component (2, 3) of the symmetric matrix.
+            </param>
+            <param name="a33">
+            The component (3, 3) of the symmetric matrix.
+            </param>
+            <returns>
+            The tuple containing a diagonal matrix D and an orthogonal matrix
+            V. The diagonal entries in D and the column vectors in V represent
+            the eigenvalues and eigenvectors of the specified symmetric matrix,
+            respectively.
+            </returns>
+        </member>
+        <member name="T:Maroontress.Euclid.Matrix33">
+            <summary>
+            Represents the 3x3 square matrix.
+            </summary>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.#ctor(Maroontress.Euclid.Position,Maroontress.Euclid.Position,Maroontress.Euclid.Position)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Maroontress.Euclid.Matrix33"/> class.
+            </summary>
+            <param name="cx">
+            The first column vector.
+            </param>
+            <param name="cy">
+            The second column vector.
+            </param>
+            <param name="cz">
+            The third column vector.
+            </param>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.#ctor(System.ValueTuple{System.Single,System.Single,System.Single}@,System.ValueTuple{System.Single,System.Single,System.Single}@,System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Maroontress.Euclid.Matrix33"/> class.
+            </summary>
+            <param name="cx">
+            The first column vector.
+            </param>
+            <param name="cy">
+            The second column vector.
+            </param>
+            <param name="cz">
+            The third column vector.
+            </param>
+        </member>
+        <member name="P:Maroontress.Euclid.Matrix33.Identity">
+            <summary>
+            Gets the identity matrix.
+            </summary>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.Transpose">
+            <summary>
+            Gets the transpose matrix.
+            </summary>
+            <returns>
+            The new transpose matrix.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.Map(Maroontress.Euclid.Position)">
+            <summary>
+            Translate the specified position.
+            </summary>
+            <param name="p">
+            The position, which represents the column vector.
+            </param>
+            <returns>
+            The position representing the result of the matrix product.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.Map(System.ValueTuple{System.Single,System.Single,System.Single})">
+            <summary>
+            Translate the specified position.
+            </summary>
+            <param name="p">
+            The position, which represents the column vector.
+            </param>
+            <returns>
+            The position representing the result of the matrix product.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.Mul(Maroontress.Euclid.Matrix33)">
+            <summary>
+            Gets the matrix product of <c>this</c> and <paramref name="a"/>.
+            </summary>
+            <param name="a">
+            Another matrix.
+            </param>
+            <returns>
+            The matrix product <c>this</c> matrix and <paramref name="a"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.ToWxyzTuple">
+            <summary>
+            Gets the quaternion representation when this matrix is the rotation
+            matrix.
+            </summary>
+            <returns>
+            The WXYZ tuple representing the quaternion.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.Determinant">
+            <summary>
+            Gets the determinant of this matrix.
+            </summary>
+            <returns>
+            The determinant.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.Column1">
+            <summary>
+            Gets the first column vector.
+            </summary>
+            <returns>
+            The first column vector, which is equivalent to the result of
+            <c>this.Map(Position.XUnit)</c>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.Column2">
+            <summary>
+            Gets the second column vector.
+            </summary>
+            <returns>
+            The second column vector, which is equivalent to the result of
+            <c>this.Map(Position.YUnit)</c>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.Column3">
+            <summary>
+            Gets the third column vector.
+            </summary>
+            <returns>
+            The third column vector, which is equivalent to the result of
+            <c>this.Map(Position.ZUnit)</c>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.Column1Tuple">
+            <summary>
+            Gets the tuple representing the first column vector.
+            </summary>
+            <returns>
+            The first column vector, which is equivalent to the result of
+            <c>this.Map((1f, 0f, 0f))</c>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.Column2Tuple">
+            <summary>
+            Gets the tuple representing the second column vector.
+            </summary>
+            <returns>
+            The second column vector, which is equivalent to the result of
+            <c>this.Map((0f, 1f, 0f))</c>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.Column3Tuple">
+            <summary>
+            Gets the tuple representing the third column vector.
+            </summary>
+            <returns>
+            The third column vector, which is equivalent to the result of
+            <c>this.Map((0f, 0f, 1f))</c>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Matrix33.EigenvaluesAndVectors(System.Single)">
+            <summary>
+            Gets the eigenvalues and eigenvectors by the Jacobi eigenvalue
+            algorithm when this is a symmetric matrix.
+            </summary>
+            <param name="threshold">
+            All absolute values of off-diagonal entries in D are less than this
+            threshold.
+            </param>
+            <returns>
+            The tuple containing a diagonal matrix D and an orthogonal matrix
+            V. The diagonal entries in D and the column vectors in V represent
+            the eigenvalues and eigenvectors of this symmetric matrix,
+            respectively.
+            </returns>
+        </member>
+        <member name="T:Maroontress.Euclid.Position">
+            <summary>
+            Represents a vector in three-dimensional Euclidean space.
+            </summary>
+            <remarks>
+            The objects of this class are immutable.
+            </remarks>
+        </member>
+        <member name="M:Maroontress.Euclid.Position.#ctor(System.Single,System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Maroontress.Euclid.Position"/>
+            class.
+            </summary>
+            <param name="x">
+            The X component of the position.
+            </param>
+            <param name="y">
+            The Y component of the position.
+            </param>
+            <param name="z">
+            The Z component of the position.
+            </param>
+        </member>
+        <member name="P:Maroontress.Euclid.Position.Origin">
+            <summary>
+            Gets the origin (zero vector).
+            </summary>
+        </member>
+        <member name="P:Maroontress.Euclid.Position.XUnit">
+            <summary>
+            Gets the unit vector along the X axis.
+            </summary>
+        </member>
+        <member name="P:Maroontress.Euclid.Position.YUnit">
+            <summary>
+            Gets the unit vector along the Y axis.
+            </summary>
+        </member>
+        <member name="P:Maroontress.Euclid.Position.ZUnit">
+            <summary>
+            Gets the unit vector along the Z axis.
+            </summary>
+        </member>
+        <member name="P:Maroontress.Euclid.Position.X">
+            <summary>
+            Gets the X component of the position.
+            </summary>
+        </member>
+        <member name="P:Maroontress.Euclid.Position.Y">
+            <summary>
+            Gets the Y component of the position.
+            </summary>
+        </member>
+        <member name="P:Maroontress.Euclid.Position.Z">
+            <summary>
+            Gets the Z component of the position.
+            </summary>
+        </member>
+        <member name="T:Maroontress.Euclid.PositionExtensions">
+            <summary>
+            Provides extension methods of the <see cref="T:Maroontress.Euclid.Position"/> class.
+            </summary>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.Opposite(Maroontress.Euclid.Position)">
+            <summary>
+            Gets the opposite vector.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The opposite vector of <paramref name="p"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.Add(Maroontress.Euclid.Position,Maroontress.Euclid.Position)">
+            <summary>
+            Gets the sum of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The sum of <paramref name="p"/> and <paramref name="q"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.Add(Maroontress.Euclid.Position,System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the sum of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The sum of <paramref name="p"/> and <paramref name="q"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.Sub(Maroontress.Euclid.Position,Maroontress.Euclid.Position)">
+            <summary>
+            Gets the difference between two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The difference between the two vectors, which represents
+            subtracting <paramref name="q"/> from <paramref name="p"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.Sub(Maroontress.Euclid.Position,System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the difference between two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The difference between the two vectors, which represents
+            subtracting <paramref name="q"/> from <paramref name="p"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.Mul(Maroontress.Euclid.Position,System.Single)">
+            <summary>
+            Gets the scalar multiplication.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="m">
+            A scalar.
+            </param>
+            <returns>
+            A vector multiplied by <paramref name="m"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.Div(Maroontress.Euclid.Position,System.Single)">
+            <summary>
+            Gets the scalar division.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="m">
+            A scalar.
+            </param>
+            <returns>
+            A vector divided by <paramref name="m"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.SquareLength(Maroontress.Euclid.Position)">
+            <summary>
+            Gets the squared length.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The squared length.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.Length(Maroontress.Euclid.Position)">
+            <summary>
+            Gets the length.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The length.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.CrossProduct(Maroontress.Euclid.Position,Maroontress.Euclid.Position)">
+            <summary>
+            Gets the cross product of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The cross product of two vectors, which represents
+            <paramref name="p"/> &#215; <paramref name="q"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.CrossProduct(Maroontress.Euclid.Position,System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the cross product of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The cross product of two vectors, which represents
+            <paramref name="p"/> &#215; <paramref name="q"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.Normalize(Maroontress.Euclid.Position)">
+            <summary>
+            Gets the normalized vector.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            A unit vector, which is the specified vector with a length of one.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.DotProduct(Maroontress.Euclid.Position,Maroontress.Euclid.Position)">
+            <summary>
+            Gets the dot product of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The dot product of <paramref name="p"/> and <paramref name="q"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.DotProduct(Maroontress.Euclid.Position,System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the dot product of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The dot product of <paramref name="p"/> and <paramref name="q"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.GetLerp(Maroontress.Euclid.Position,Maroontress.Euclid.Position,System.Single)">
+            <summary>
+            Gets the linear interpolation (Lerp) of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <param name="t">
+            A parameter between zero and one, inclusively.
+            </param>
+            <returns>
+            The linear-interpolated vector. This method guarantees that the
+            return value equals <paramref name="p"/> when <paramref name="t"/>
+            equals zero, and equals <paramref name="q"/> when <paramref
+            name="t"/> equals one.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.GetLerp(Maroontress.Euclid.Position,System.ValueTuple{System.Single,System.Single,System.Single}@,System.Single)">
+            <summary>
+            Gets the linear interpolation (Lerp) of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <param name="t">
+            A parameter between zero and one, inclusively.
+            </param>
+            <returns>
+            The linear-interpolated vector. This method guarantees that the
+            return value equals <paramref name="p"/> when <paramref name="t"/>
+            equals zero, and equals <paramref name="q"/> when <paramref
+            name="t"/> equals one.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.InverseX(Maroontress.Euclid.Position)">
+            <summary>
+            Gets the vector with the X component inversed.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The vector with the X component inversed.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.InverseY(Maroontress.Euclid.Position)">
+            <summary>
+            Gets the vector with the Y component inversed.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The vector with the Y component inversed.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.InverseZ(Maroontress.Euclid.Position)">
+            <summary>
+            Gets the vector with the Z component inversed.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The vector with the Z component inversed.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.PositionExtensions.ToTuple(Maroontress.Euclid.Position)">
+            <summary>
+            Gets the new XYZ tuple representing <c>this</c> position.
+            </summary>
+            <param name="p">
+            The position.
+            </param>
+            <returns>
+            The new XYZ tuple.
+            </returns>
+        </member>
+        <member name="T:Maroontress.Euclid.Posture">
+            <summary>
+            The position and rotation.
+            </summary>
+        </member>
+        <member name="M:Maroontress.Euclid.Posture.#ctor(Maroontress.Euclid.Position,Maroontress.Euclid.Matrix33)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Maroontress.Euclid.Posture"/> class.
+            </summary>
+            <param name="position">
+            The position in the parent coordinate system, which represents the
+            origin of this coordinate system.
+            </param>
+            <param name="rotation">
+            The rotation in the parent coordinate system, which represents the
+            three axes of this coordinate system. It must be a rotation matrix.
+            </param>
+        </member>
+        <member name="P:Maroontress.Euclid.Posture.Identity">
+            <summary>
+            Gets the identity posture, whose position and rotation are <see
+            cref="P:Maroontress.Euclid.Position.Origin"/> and <see cref="P:Maroontress.Euclid.Matrix33.Identity"/>.
+            </summary>
+        </member>
+        <member name="P:Maroontress.Euclid.Posture.Position">
+            <summary>
+            Gets the position.
+            </summary>
+        </member>
+        <member name="P:Maroontress.Euclid.Posture.Rotation">
+            <summary>
+            Gets the rotation.
+            </summary>
+        </member>
+        <member name="M:Maroontress.Euclid.Posture.FromLocalToParent(Maroontress.Euclid.Position)">
+            <summary>
+            Translates the specified local position in this coordinate system
+            into the position in the parent coordinate system.
+            </summary>
+            <param name="localPosition">
+            The local position.
+            </param>
+            <returns>
+            The position in the parent coordinate system.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.Posture.FromParentToLocal(Maroontress.Euclid.Position)">
+            <summary>
+            Translates the specified position in the parent coordinate system
+            into the local position in this coordinate system.
+            </summary>
+            <param name="parentPosition">
+            The position in the parent coordinate system.
+            </param>
+            <returns>
+            The local position.
+            </returns>
+        </member>
+        <member name="T:Maroontress.Euclid.Toolkit">
+            <summary>
+            Provides the dependency layer to customize.
+            </summary>
+        </member>
+        <member name="P:Maroontress.Euclid.Toolkit.Sqrt">
+            <summary>
+            Gets or sets the function that returns the square root of a
+            specified number.
+            </summary>
+            <remarks>
+            The default function is <see cref="M:System.Math.Sqrt(System.Double)"/>.
+            </remarks>
+        </member>
+        <member name="P:Maroontress.Euclid.Toolkit.Sin">
+            <summary>
+            Gets or sets the function that returns the sine of the specified
+            angle in radians.
+            </summary>
+            <remarks>
+            The default function is <see cref="M:System.Math.Sin(System.Double)"/>.
+            </remarks>
+        </member>
+        <member name="P:Maroontress.Euclid.Toolkit.Cos">
+            <summary>
+            Gets or sets the function that returns the cosine of the specified
+            angle in radians.
+            </summary>
+            <remarks>
+            The default function is <see cref="M:System.Math.Cos(System.Double)"/>.
+            </remarks>
+        </member>
+        <member name="P:Maroontress.Euclid.Toolkit.Atan2">
+            <summary>
+            Gets or sets the function that returns the angle in radian whose
+            tangent is the quotient of two specified numbers.
+            </summary>
+            <remarks>
+            The default function is <see cref="M:System.Math.Atan2(System.Double,System.Double)"/>.
+            </remarks>
+        </member>
+        <member name="T:Maroontress.Euclid.XyzTupleExtentions">
+            <summary>
+            Provides extension methods of the <c>(float X, float Y, float Z)</c>
+            tuple representing a vector in three-dimensional Euclidean space.
+            </summary>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.Opposite(System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the opposite vector.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The opposite vector of <paramref name="p"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.Add(System.ValueTuple{System.Single,System.Single,System.Single}@,System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the sum of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The sum of <paramref name="p"/> and <paramref name="q"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.Add(System.ValueTuple{System.Single,System.Single,System.Single}@,Maroontress.Euclid.Position)">
+            <summary>
+            Gets the sum of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The sum of <paramref name="p"/> and <paramref name="q"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.Sub(System.ValueTuple{System.Single,System.Single,System.Single}@,System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the difference between two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The difference between the two vectors, which represents
+            subtracting <paramref name="q"/> from <paramref name="p"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.Sub(System.ValueTuple{System.Single,System.Single,System.Single}@,Maroontress.Euclid.Position)">
+            <summary>
+            Gets the difference between two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The difference between the two vectors, which represents
+            subtracting <paramref name="q"/> from <paramref name="p"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.Mul(System.ValueTuple{System.Single,System.Single,System.Single}@,System.Single)">
+            <summary>
+            Gets the scalar multiplication.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="m">
+            A scalar.
+            </param>
+            <returns>
+            A vector multiplied by <paramref name="m"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.Div(System.ValueTuple{System.Single,System.Single,System.Single}@,System.Single)">
+            <summary>
+            Gets the scalar division.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="m">
+            A scalar.
+            </param>
+            <returns>
+            A vector divided by <paramref name="m"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.SquareLength(System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the squared length.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The squared length.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.Length(System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the length.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The length.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.CrossProduct(System.ValueTuple{System.Single,System.Single,System.Single}@,System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the cross product of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The cross product of two vectors, which represents
+            <paramref name="p"/> &#215; <paramref name="q"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.CrossProduct(System.ValueTuple{System.Single,System.Single,System.Single}@,Maroontress.Euclid.Position)">
+            <summary>
+            Gets the cross product of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The cross product of two vectors, which represents
+            <paramref name="p"/> &#215; <paramref name="q"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.Normalize(System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the normalized vector.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            A unit vector, which is the specified vector with a length of one.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.DotProduct(System.ValueTuple{System.Single,System.Single,System.Single}@,System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the dot product of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The dot product of <paramref name="p"/> and <paramref name="q"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.DotProduct(System.ValueTuple{System.Single,System.Single,System.Single}@,Maroontress.Euclid.Position)">
+            <summary>
+            Gets the dot product of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <returns>
+            The dot product of <paramref name="p"/> and <paramref name="q"/>.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.GetLerp(System.ValueTuple{System.Single,System.Single,System.Single}@,System.ValueTuple{System.Single,System.Single,System.Single}@,System.Single)">
+            <summary>
+            Gets the linear interpolation (Lerp) of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <param name="t">
+            A parameter between zero and one, inclusively.
+            </param>
+            <returns>
+            The linear-interpolated vector. This method guarantees that the
+            return value equals <paramref name="p"/> when <paramref name="t"/>
+            equals zero, and equals <paramref name="q"/> when <paramref
+            name="t"/> equals one.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.GetLerp(System.ValueTuple{System.Single,System.Single,System.Single}@,Maroontress.Euclid.Position,System.Single)">
+            <summary>
+            Gets the linear interpolation (Lerp) of two vectors.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <param name="q">
+            Another vector.
+            </param>
+            <param name="t">
+            A parameter between zero and one, inclusively.
+            </param>
+            <returns>
+            The linear-interpolated vector. This method guarantees that the
+            return value equals <paramref name="p"/> when <paramref name="t"/>
+            equals zero, and equals <paramref name="q"/> when <paramref
+            name="t"/> equals one.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.InverseX(System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the vector with the X component inversed.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The vector with the X component inversed.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.InverseY(System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the vector with the Y component inversed.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The vector with the Y component inversed.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.InverseZ(System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the vector with the Z component inversed.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The vector with the Z component inversed.
+            </returns>
+        </member>
+        <member name="M:Maroontress.Euclid.XyzTupleExtentions.ToPosition(System.ValueTuple{System.Single,System.Single,System.Single}@)">
+            <summary>
+            Gets the new <see cref="T:Maroontress.Euclid.Position"/> object representing this.
+            </summary>
+            <param name="p">
+            A vector.
+            </param>
+            <returns>
+            The new <see cref="T:Maroontress.Euclid.Position"/> object representing <c>this</c>
+            tuple.
+            </returns>
+        </member>
+    </members>
+</doc>
